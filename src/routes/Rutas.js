@@ -7,6 +7,7 @@ import { Historia } from '../Historia/Historia'
 import { Integrantes } from "../Integrantes/Integrantes"
 import { Music } from "../Music/Music"
 import { Albumes } from "../Albumes/Albumes"
+import { Mercancia } from "../Mercancia/Mercancia"
 
 //path es una ruta
 export function Rutas(){
@@ -16,11 +17,12 @@ export function Rutas(){
       
       <Menu/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/historia" element={<Historia />} />
-        <Route path="/integrantes" element={<Integrantes />} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/historia" element={<Historia/>} />
+        <Route path="/integrantes" element={<Integrantes/>} />
         <Route path="/music" element={<Music/>} />
-        <Route path="/albumes" element={<Albumes />} />
+        <Route path="/albumes" element={<Albumes/>} />
+        <Route path="/mercancia" element={<Mercancia/>} />
     </Routes>
   </>
   )
