@@ -21,22 +21,22 @@ export function Integrantes() {
 
     return (
         //Fragmento <></>
-        <div class="container bg-danger">
-            <div class="row row-cols-1 row-cols-md-2 g-5 p-5">
+        <div className="container bg-danger">
+            <div className="row row-cols-1 row-cols-md-2 g-5 p-5">
 
                 {
                     perfiles.map(function (perfile) {
                         return (
                             <>
 
-                                <div class="col align-self-center shadow">
-                                    <h4 class="pb-2 text-center">{perfile.vida}</h4>
+                                <div className="col align-self-center shadow">
+                                    <h4 className="pb-2 text-center">{perfile.vida}</h4>
                                 </div>
-                                <div class="col">
-                                    <div class="card h-100 shadow">
-                                        <img src={perfile.perfil} alt="foto" class="h-100 img-fluid w-100" />
+                                <div className="col">
+                                    <div className="card h-100 shadow">
+                                        <img src={perfile.perfil} alt="foto" className="h-100 img-fluid w-100" />
                                         <hr />
-                                        <h3 class="pb-2 text-center">{perfile.nombre}</h3>
+                                        <h3 className="pb-2 text-center">{perfile.nombre}</h3>
                                     </div>
                                 </div>
                             </>

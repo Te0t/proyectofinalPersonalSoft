@@ -1,4 +1,16 @@
+import { Footer } from '../shared/Footer/Footer'
+import { useNavigate } from 'react-router-dom'
+
 export function Mercancia(){
+
+    let navegacion=useNavigate()
+
+    //que hago cuando se de el evento...
+    function detectarEvento(productoSeleccionado){
+        navegacion('/tienda',{
+            state:{productoSeleccionado}
+        })
+    }
 
     let titulo="Productos del Dj"
 
@@ -38,22 +50,25 @@ export function Mercancia(){
     return(
         <>
             <h1>{titulo}</h1>
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-3 g-5">
+            <div className="container">
+                <div className="row row-cols-1 row-cols-md-3 g-5">
                     
                     {
-                        productos.map(function(producto){
+                        productos.map(function(producto,id){
                             return(
                                 <>
-                                    <div class="col">
-                                        <div class="card h-100 shadow">
-                                            <img src={producto.foto} alt="foto" class="h-100 img-fluid w-100"/>
+                                    <div className="col" key={id}>
+                                        <div className="card h-100 shadow">
+                                        <button className="btn btn-primary mx-5 my-3" onClick={
+                                            function(){
+                                                detectarEvento(producto)
+                                            }
+                                        }>Ampliar</button>
+                                            <img src={producto.foto} alt="foto" className="h-100 img-fluid w-100"/>
                                             <hr/>
-                                            <h3 class="pb-2 text-center">{producto.nombre}</h3>
-                                            <h4 class="pb-2 text-center">{producto.precio}</h4>
-
+                                            <h3 className="pb-2 text-center">{producto.nombre}</h3>
+                                            <h4 className="pb-2 text-center">{producto.precio}</h4>
                                         </div>
-
                                     </div>
                                 </>
                             )
