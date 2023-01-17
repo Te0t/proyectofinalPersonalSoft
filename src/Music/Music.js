@@ -26,28 +26,30 @@ export function Music(){
         return(
             <>
             <h2>Canciones de la banda</h2>
-            <div className="container-fluid">
-                <div className="row row-cols-1 row-cols-md-5 g-5">
+            <div className="row row-cols-1 row-cols-md-5 g-5">
             {
                 canciones.tracks.map(function(cancion,id){
+                    
                     return(
                         <div key={id}>
-                            <div className="col h-100">
+                            <div className="col">
                                 <div className="card h-100 shadow">
-                                    <img src={cancion.album.images[0].url} className="h-100 img-fluid w-100"></img>
-                                    <h2 className="pb-1 text-center">{cancion.name}</h2>
-                                        <div className="text-center">
-                                            <audio controls src={cancion.preview_url}></audio>
-                                            </div>
-                                    <h1 className="pb-2 text-center"></h1>
+                                    <img  className="card-img-top" src={cancion.album.images[0].url}></img>
+                                    <div class="card-body">
+                                        <h6 class="card-title">{cancion.name}</h6>
+                                        <audio className="w-75 d-block mx-auto" controls src={cancion.preview_url} auto></audio>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Popularidad: {cancion.popularity}</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
                     )
                 })
             }
                 </div>
-            </div>
             </>
         )
     }
